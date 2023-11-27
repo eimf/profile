@@ -11,7 +11,7 @@ export default function Home() {
         <SideNav />
         <About />
       </div>
-      <div className="w-full mx-5">
+      <div className="w-full mx-10">
         <Skills />
       </div>
     </main>

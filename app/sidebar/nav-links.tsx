@@ -1,24 +1,31 @@
-'use client';
+"use client";
 
-import {
-  UserGroupIcon,
-  HomeIcon,
-  DocumentDuplicateIcon,
-} from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
+import { MapIcon } from "@heroicons/react/24/outline";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: 'Mail', href: 'mailto:lzdzel@gmail.com', icon: HomeIcon },
   {
-    name: 'Github',
-    href: 'https://github.com/eimf',
-    icon: DocumentDuplicateIcon,
+    name: "Location",
+    href: "https://maps.app.goo.gl/y33KmKGhdqYMBVfe7",
+    icon: MapIcon,
   },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/ezzykeeel/', icon: UserGroupIcon },
+  { name: "Mail", href: "mailto:lzdzel@gmail.com", icon: SiGmail },
+  {
+    name: "GitHub",
+    href: "https://github.com/eimf",
+    icon: FaGithub,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/ezzykeeel/",
+    icon: FaLinkedin,
+  },
 ];
 
 export default function NavLinks() {
@@ -33,10 +40,10 @@ export default function NavLinks() {
             target="_blank"
             href={link.href}
             className={clsx(
-              'flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+              "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               {
-                'bg-sky-100 text-blue-600': pathname === link.href,
-              },
+                "bg-sky-100 text-blue-600": pathname === link.href,
+              }
             )}
           >
             <LinkIcon className="w-6" />
